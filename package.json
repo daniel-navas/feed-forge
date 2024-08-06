@@ -8,7 +8,8 @@
     "server": "node dist/server/index.js",
     "client": "webpack serve --config webpack.config.js",
     "serve-and-client": "run-p server client",
-    "start": "run-s build serve-and-client"
+    "start": "run-s build serve-and-client",
+    "vercel-build": "run-s build serve-and-client"
   },
   "keywords": [],
   "author": "",
