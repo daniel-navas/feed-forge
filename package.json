@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc && webpack --config webpack.config.js",
-    "server": "node dist/server/index.js",
-    "serve-client": "serve -s dist/client -l 3000",
-    "start": "run-s build server serve-client",
+    "start": "node dist/server/index.js",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
@@ -26,14 +24,13 @@
     "serve": "^14.2.3",
     "typescript": "^5.5.4",
     "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "mini-css-extract-plugin": "^2.9.0",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1"
   },
   "devDependencies": {
-    "css-loader": "^7.1.2",
-    "html-webpack-plugin": "^5.6.0",
-    "mini-css-extract-plugin": "^2.9.0",
-    "style-loader": "^4.0.0",
-    "ts-loader": "^9.5.1",
     "webpack-dev-server": "^5.0.4"
   }
 }
