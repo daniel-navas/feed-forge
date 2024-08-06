@@ -1,0 +1,170 @@
+body {
+    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app-container {
+    display: flex;
+    height: 100vh;
+    color: black;
+  }
+  
+  .feed-section {
+    width: 250px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feed-section h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .preset-dropdown {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .preset-dropdown label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .preset-dropdown select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-preset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .new-preset input {
+    width: calc(100% - 90px);
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .new-preset button {
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .new-preset button:hover {
+    background-color: #0056b3;
+  }
+  
+  .preset-list {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .preset-item {
+    margin-bottom: 10px;
+  }
+  
+  .preset-item ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: disc;
+  }
+  
+  .preset-item li {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .photo-feed {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .photo-feed .photo-item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  
+  .photo-feed img {
+    width: 70%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .photo-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 16px;
+  }
+  
+  .like-button {
+    background-color: #ff4d4d;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .like-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .topics-list {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .photo-feed button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .photo-feed button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .topic-item {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    list-style-type: none;
+    margin: 2px 0;
+  }
+  
