@@ -64,8 +64,7 @@ const PhotoFeed: React.FC<PhotoFeedProps> = ({ selectedPreset, presets, addTopic
       const presetTopics = preset?.topics || [];
       let topicsToUse = getTopicsForPreset(presetTopics);
       const topicsParam = topicsToUse.join(',');
-      const url = `http://localhost:4000/api/random-image?count=10&topics=${topicsParam}`;
-      //const url = `https://feedforge-1fxj--4000--41692973.local-credentialless.webcontainer.io/api/random-image?count=10&topics=${topicsParam}`;
+      const url = `https://feed-forge-aa8df5951922.herokuapp.com//api/random-image?count=10&topics=${topicsParam}`;
       const response = await axios.get(url);
 
       if (Array.isArray(response.data)) {
