@@ -13,14 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
+const path_1 = __importDefault(require("path"));
 const unsplash_1 = require("./unsplash");
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT || 4000;
-app.get('/', (req, res) => {
-    res.send('Welcome to the Feed Forge API');
-});
+app.use(express_1.default.static(path_1.default.join(__dirname, '..', 'client')));
 app.get('/api/random-image', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const topics = req.query.topics;
     try {
@@ -31,6 +30,9 @@ app.get('/api/random-image', (req, res) => __awaiter(void 0, void 0, void 0, fun
         res.status(500).json({ error: 'Error fetching images from Unsplash' });
     }
 }));
+app.get('*', (req, res) => {
+    res.sendFile(path_1.default.join(__dirname, '..', 'client', 'index.html'));
+});
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
