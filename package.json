@@ -7,7 +7,7 @@
     "build": "tsc && webpack --config webpack.config.js",
     "server": "node dist/server/index.js",
     "serve-client": "serve -s dist/client -l 3000",
-    "start": "run-p server serve-client",
+    "start": "run-s build server serve-client",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
