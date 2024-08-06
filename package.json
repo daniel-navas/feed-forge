@@ -7,7 +7,7 @@
     "build": "tsc",
     "server": "node dist/server/index.js",
     "client": "webpack serve --config webpack.config.js",
-    "serve-and-client": "run-p server client",
+    "serve-and-client": "client",
     "start": "run-s build serve-and-client",
     "heroku-postbuild": "npm run build"
   },
