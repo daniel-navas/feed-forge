@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import { getRandomImage } from './unsplash';
 import dotenv from 'dotenv';
 
@@ -7,9 +8,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the Feed Forge API');
-});
+app.use(express.static(path.join(__dirname, '..', 'client')));
 
 app.get('/api/random-image', async (req, res) => {
   const topics = req.query.topics as string;
@@ -20,6 +19,10 @@ app.get('/api/random-image', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error fetching images from Unsplash' });
   }
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
 });
 
 app.listen(port, () => {
